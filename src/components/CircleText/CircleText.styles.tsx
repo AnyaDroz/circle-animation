@@ -2,15 +2,17 @@ import styled, { StyledComponent } from "styled-components";
 
 type StyledLightTextProps = {
 	fontSize: string;
+	color: string;
 };
 
 export const StyledLightText = styled.span<StyledLightTextProps>(
-	({ fontSize }) => `
+	({ fontSize, color }) => `
 	font-family: Arial;
 	font-weight: 200;
 	line-height: 0.7;
 	font-size: ${fontSize};
 	text-transform: uppercase;
+	color: ${color};
 `
 );
 
