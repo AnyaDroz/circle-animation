@@ -8,13 +8,14 @@ import {
 } from "../CircleText/CircleText.styles";
 
 const numberOfWords = 5;
-const numberOfRows = 4;
+
 // const fontSize = "100px";
 type CircleTextProps = {
 	backgroundImageUrl: string;
 	text: string;
 	fontSize?: any;
 	color?: any;
+	numberOfRows: number;
 };
 //not working with string here...
 
@@ -23,6 +24,7 @@ const CircleText = ({
 	text,
 	fontSize,
 	color,
+	numberOfRows,
 }: CircleTextProps) => {
 	{
 		const addText = (howMany: number, fontSize: string, color: string) => {

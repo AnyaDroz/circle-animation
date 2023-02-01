@@ -11,6 +11,7 @@ function App() {
 	const [text, setText] = useState("");
 	const [value, setValue] = useState("");
 	const [color, setColor] = useState("");
+	const [row, setRow] = useState(25);
 
 	const handleChange = (event: any) => {
 		setText(event.target.value);
@@ -18,6 +19,9 @@ function App() {
 
 	const handleSlider = (event: any) => {
 		setValue(event.target.value);
+		if (value === "100") {
+			setRow(10);
+		}
 		console.log(value);
 	};
 
@@ -53,13 +57,14 @@ function App() {
 					/>
 					<button onClick={clickHandlerBlue}>Blue</button>
 					<button onClick={clickHandlerRed}>Red</button>
-					<input onChange={handleSlider} type="range" min="1" max="100" />
+					<input onChange={handleSlider} type="range" min="50" max="100" />
 				</StyledControlPanel>
 				<CircleText
 					backgroundImageUrl=""
 					text={text}
 					fontSize={`${value}px`}
 					color={color}
+					numberOfRows={row}
 				/>
 			</StyledPageGrid>
 		</div>
