@@ -30,7 +30,9 @@ const CircleText = ({
 			for (let i = 0; i < howMany; i++) {
 				result.push(
 					<>
-						<StyledBoldText>{text}</StyledBoldText>
+						<StyledBoldText color={color} fontSize={fontSize}>
+							{text}
+						</StyledBoldText>
 						<StyledLightText color={color} fontSize={fontSize}>
 							{text}
 						</StyledLightText>
@@ -47,7 +49,9 @@ const CircleText = ({
 						<StyledLightText color={color} fontSize={fontSize}>
 							{text}
 						</StyledLightText>
-						<StyledBoldText>{text}</StyledBoldText>
+						<StyledBoldText color={color} fontSize={fontSize}>
+							{text}
+						</StyledBoldText>
 					</>
 				);
 			}

@@ -1,11 +1,11 @@
 import styled, { StyledComponent } from "styled-components";
 
-type StyledLightTextProps = {
+type StyledTextProps = {
 	fontSize: string;
 	color: string;
 };
 
-export const StyledLightText = styled.span<StyledLightTextProps>(
+export const StyledLightText = styled.span<StyledTextProps>(
 	({ fontSize, color }) => `
 	font-family: Arial;
 	font-weight: 200;
@@ -16,13 +16,16 @@ export const StyledLightText = styled.span<StyledLightTextProps>(
 `
 );
 
-export const StyledBoldText = styled.span`
+export const StyledBoldText = styled.span<StyledTextProps>(
+	({ color, fontSize }) => `
 	font-family: Arial;
 	font-weight: 600;
 	line-height: 0.7;
-	font-size: 100px;
+	font-size: ${fontSize};
 	text-transform: uppercase;
-`;
+	color: ${color};
+`
+);
 
 export const StyledText = styled.div`
 	position: relative;
