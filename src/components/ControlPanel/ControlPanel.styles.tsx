@@ -1,15 +1,25 @@
 import styled from "styled-components";
-import { isBoxedPrimitive } from "util/types";
 
 export const StyledControlPanel = styled.div`
-	padding: 40px;
-	border: 1px solid black;
-	height: 100vh;
-	grid-column-start: 1;
-	grid-column-end: 2;
+	display: flex;
 `;
 
 export const StyledPageGrid = styled.div`
 	display: grid;
-	grid-template-columns: 30% 70%;
+
+	height: 100vh;
+	background: linear-gradient(180deg, #3125bf 0%, #af7c30 100%);
+`;
+
+export const StyledInput = styled.input`
+	margin: 20px;
+	border: none;
+	height: 60px;
+	width: 50%;
+	font-size: 50px;
+	font-family: "PowerGroteskItalic";
+
+	:checked {
+		color: red;
+	}
 `;

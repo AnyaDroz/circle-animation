@@ -7,7 +7,7 @@ import {
 	StyledAltText,
 } from "../CircleText/CircleText.styles";
 
-const numberOfWords = 5;
+const numberOfWords = 10;
 
 // const fontSize = "100px";
 type CircleTextProps = {
@@ -16,6 +16,8 @@ type CircleTextProps = {
 	fontSize?: any;
 	color?: any;
 	numberOfRows: number;
+	fontFamily?: any;
+	fontFamilyBold?: any;
 };
 //not working with string here...
 
@@ -25,17 +27,33 @@ const CircleText = ({
 	fontSize,
 	color,
 	numberOfRows,
+	fontFamily,
+	fontFamilyBold,
 }: CircleTextProps) => {
 	{
-		const addText = (howMany: number, fontSize: string, color: string) => {
+		const addText = (
+			howMany: number,
+			fontSize: string,
+			color: string,
+			fontFamily: string,
+			fontFamilyBold: string
+		) => {
 			const result: Array<React.ReactNode> = [];
 			for (let i = 0; i < howMany; i++) {
 				result.push(
 					<>
-						<StyledBoldText color={color} fontSize={fontSize}>
+						<StyledBoldText
+							color={color}
+							fontSize={fontSize}
+							fontFamily={fontFamilyBold}
+						>
 							{text}
 						</StyledBoldText>
-						<StyledLightText color={color} fontSize={fontSize}>
+						<StyledLightText
+							fontFamily={fontFamily}
+							color={color}
+							fontSize={fontSize}
+						>
 							{text}
 						</StyledLightText>
 					</>
@@ -43,15 +61,29 @@ const CircleText = ({
 			}
 			return result;
 		};
-		const addAltText = (howMany: number, fontSize: string, color: string) => {
+		const addAltText = (
+			howMany: number,
+			fontSize: string,
+			color: string,
+			fontFamily: string,
+			fontFamilyBold: string
+		) => {
 			const result: Array<React.ReactNode> = [];
 			for (let i = 0; i < howMany; i++) {
 				result.push(
 					<>
-						<StyledLightText color={color} fontSize={fontSize}>
+						<StyledLightText
+							color={color}
+							fontSize={fontSize}
+							fontFamily={fontFamily}
+						>
 							{text}
 						</StyledLightText>
-						<StyledBoldText color={color} fontSize={fontSize}>
+						<StyledBoldText
+							fontFamily={fontFamilyBold}
+							color={color}
+							fontSize={fontSize}
+						>
 							{text}
 						</StyledBoldText>
 					</>
@@ -60,14 +92,34 @@ const CircleText = ({
 			return result;
 		};
 
-		const addRows = (howMany: number, fontSize: string, color: string) => {
+		const addRows = (
+			howMany: number,
+			fontSize: string,
+			color: string,
+			fontFamily: string,
+			fontFamilyBold: string
+		) => {
 			const result: Array<React.ReactNode> = [];
 			for (let i = 0; i < howMany; i++) {
 				result.push(
 					<>
-						<StyledText>{addText(numberOfWords, fontSize, color)}</StyledText>
+						<StyledText>
+							{addText(
+								numberOfWords,
+								fontSize,
+								color,
+								fontFamily,
+								fontFamilyBold
+							)}
+						</StyledText>
 						<StyledAltText>
-							{addAltText(numberOfWords, fontSize, color)}
+							{addAltText(
+								numberOfWords,
+								fontSize,
+								color,
+								fontFamily,
+								fontFamilyBold
+							)}
 						</StyledAltText>
 					</>
 				);
@@ -77,7 +129,7 @@ const CircleText = ({
 		return (
 			<>
 				<StyledTextContainer>
-					{addRows(numberOfRows, fontSize, color)}
+					{addRows(numberOfRows, fontSize, color, fontFamily, fontFamilyBold)}
 				</StyledTextContainer>
 			</>
 		);
