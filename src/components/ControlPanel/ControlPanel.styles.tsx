@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledControlPanel = styled.div`
 	display: flex;
+	justify-content: space-between;
 `;
 
 export const StyledPageGrid = styled.div`
@@ -12,14 +13,14 @@ export const StyledPageGrid = styled.div`
 `;
 
 export const StyledInput = styled.input`
-	margin: 20px;
+	margin: auto;
 	border: none;
 	height: 60px;
 	width: 50%;
 	font-size: 50px;
 	font-family: "PowerGroteskItalic";
+`;
 
-	:checked {
-		color: red;
-	}
+export const StyledSliderInput = styled.input`
+	margin: auto;
 `;

@@ -1,11 +1,10 @@
 import React from "react";
 import { StyledLabel, StyledInput, StyledSwitch } from "./Toggle.styles";
 
-const Toggle = () => {
+const Toggle = ({ onChange, checked }: any) => {
 	return (
 		<StyledLabel>
-			<span>Toggle is off</span>
-			<StyledInput type="checkbox" />
+			<StyledInput checked={checked} onChange={onChange} type="checkbox" />
 			<StyledSwitch />
 		</StyledLabel>
 	);

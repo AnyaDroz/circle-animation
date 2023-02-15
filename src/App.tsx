@@ -7,6 +7,7 @@ import {
 	StyledControlPanel,
 	StyledPageGrid,
 	StyledInput,
+	StyledSliderInput,
 } from "./components/ControlPanel/ControlPanel.styles";
 function App() {
 	const [text, setText] = useState("");
@@ -25,8 +26,9 @@ function App() {
 	const clickHandlerBlue = (event: any) => {
 		setColor("#ffffff");
 	};
-	const clickHandlerRed = (event: any) => {
-		setColor("#dd002c");
+
+	const onChange = (event: any) => {
+		setColor("#ffffff");
 	};
 
 	return (
@@ -49,10 +51,14 @@ function App() {
 						onChange={handleChange}
 						value={text}
 					/>
-					<Toggle />
-					<button onClick={clickHandlerBlue}>Blue</button>
-					<button onClick={clickHandlerRed}>Red</button>
-					<input onChange={handleSlider} type="range" min="50" max="150" />
+					<Toggle onChange={onChange} />
+
+					<StyledSliderInput
+						onChange={handleSlider}
+						type="range"
+						min="50"
+						max="150"
+					/>
 				</StyledControlPanel>
 			</StyledPageGrid>
 		</div>

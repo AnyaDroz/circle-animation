@@ -11,7 +11,8 @@ export const StyledSwitch = styled.div`
 	position: relative;
 	width: 60px;
 	height: 32px;
-	background: #b3b3b3;
+
+	border: white 1px solid;
 	border-radius: 32px;
 	padding: 4px;
 	transition: 300ms all;
@@ -34,8 +35,6 @@ export const StyledInput = styled.input`
 	display: none;
 
 	&:checked + ${StyledSwitch} {
-		background: green;
-
 		&:before {
 			transform: translate(32px, -50%);
 		}
