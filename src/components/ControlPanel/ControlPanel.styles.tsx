@@ -5,12 +5,17 @@ export const StyledControlPanel = styled.div`
 	justify-content: space-between;
 `;
 
-export const StyledPageGrid = styled.div`
-	display: grid;
+type StyledPageGridProps = {
+	color: string;
+};
 
+export const StyledPageGrid = styled.span<StyledPageGridProps>(
+	({ color }) => `
+	display: grid;
 	height: 100vh;
-	background: linear-gradient(180deg, #3125bf 0%, #af7c30 100%);
-`;
+	background: ${color}
+`
+);
 
 export const StyledInput = styled.input`
 	margin: auto;
@@ -23,4 +28,27 @@ export const StyledInput = styled.input`
 
 export const StyledSliderInput = styled.input`
 	margin: auto;
+	-webkit-appearance: none;
+	width: 250px;
+	height: 5px;
+	background: #ffffff;
+	outline: none;
+	border-radius: 50px;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+	transform: rotate(-7.6deg);
+	::-moz-range-thumb {
+		width: 25px;
+		height: 25px;
+		cursor: pointer;
+	}
+	::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 20px;
+		height: 20px;
+		background: #ffffff;
+		cursor: pointer;
+		border-radius: 50px;
+	}
 `;

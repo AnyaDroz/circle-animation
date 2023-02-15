@@ -14,6 +14,7 @@ function App() {
 	const [value, setValue] = useState("50");
 	const [color, setColor] = useState("");
 	const [row, setRow] = useState(20);
+	const [checked, setChecked] = useState(false);
 
 	const handleChange = (event: any) => {
 		setText(event.target.value);
@@ -29,11 +30,16 @@ function App() {
 
 	const onChange = (event: any) => {
 		setColor("#ffffff");
+		if (checked === true) {
+			setChecked(false);
+		} else if (checked === false) {
+			setChecked(true);
+		}
 	};
 
 	return (
 		<div className="App">
-			<StyledPageGrid>
+			<StyledPageGrid color={checked ? "black" : "blue"}>
 				<CircleText
 					fontFamily="PowerGroteskItalic"
 					fontFamilyBold="PowerGroteskHeavy"
@@ -51,7 +57,7 @@ function App() {
 						onChange={handleChange}
 						value={text}
 					/>
-					<Toggle onChange={onChange} />
+					<Toggle checked={checked} onChange={onChange} />
 
 					<StyledSliderInput
 						onChange={handleSlider}
